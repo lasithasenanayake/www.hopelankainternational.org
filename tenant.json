@@ -1,0 +1,24 @@
+{
+    "apps":{
+        "dock":{
+            "version":"latest"
+        },
+        "dock-settings":{
+            "version":"latest"
+        },
+        "davvag-cms":{
+            "version":"latest"
+        },
+        "davvag-cms-generalapps":{
+            "version":"latest"
+        }
+    },
+    "webdock":{
+        "events":{
+            "onStartup":{
+                "admin" : "dock",
+                "default" : "davvag-cms"
+            }
+        }
+    }
+}
