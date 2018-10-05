@@ -24,7 +24,7 @@
 <div id="idLeftPanel" class="leftpanel" webdock-component="left-menu" style="display:none">
 
     </div><!-- leftpanel -->
-<div  webdock-component="soss-routes">
+<div  webdock-component="soss-routes" class="id-soss-routes">
     </div><!-- contentpanel -->
 
 <div  webdock-component="footer-bar" id="id-footer-bar">

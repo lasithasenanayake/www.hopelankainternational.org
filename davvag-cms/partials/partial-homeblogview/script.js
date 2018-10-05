@@ -47,6 +47,7 @@ WEBDOCK.component().register(function(exports){
 
 
     function createlayout(){
+        /// im using this to set up the blog list
         var container = document.querySelector('#bloglist');
         var msnry = new Masonry( container, {
         // options
