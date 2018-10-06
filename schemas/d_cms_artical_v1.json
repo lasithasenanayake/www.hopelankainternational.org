@@ -64,6 +64,12 @@
             "annotations":{
                 "maxLen": 1
             }
+        },{
+            "fieldName":"showpics",
+            "dataType":"java.lang.String",
+            "annotations":{
+                "maxLen": 1
+            }
         },
         {
             "fieldName":"imgname",

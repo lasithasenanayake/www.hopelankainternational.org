@@ -13,7 +13,8 @@ WEBDOCK.component().register(function(exports){
         icon:"",
         TopButtons:[{id:"home",caption:"Home",url:"#/profile",class:"nav-item",sub:[]},
                    {id:"about",caption:"About",url:"#/app/profileapp",class:"nav-item dropdown",sub:[{id:"home",caption:"Home",url:"#app",sub:[]},{id:"home",caption:"Home",url:"#app",sub:[]}]},
-                   {id:"admin",caption:"Admininstration",url:"admin.php",class:"nav-item align-left",sub:[]}]
+                   {id:"admin",caption:"Admininstration",url:"admin.php",class:"nav-item align-left",sub:[]}],
+        searchbar:false
     };
     var vueData = {
         data:bindData,

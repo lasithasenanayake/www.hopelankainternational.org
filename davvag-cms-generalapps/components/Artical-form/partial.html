@@ -56,6 +56,19 @@
             </div>
         </div>
         <div class="form-group">
+          <label class="col-md-4 control-label" for="feature">Show All Pictures</label>
+          <div class="col-md-4"> 
+            <label class="radio-inline" for="showpics-0">
+              <input type="radio" id="showpics-0" value="y" name="showpics" v-model="product.showpics">
+              Yes
+            </label> 
+            <label class="radio-inline" for="showpics-1">
+              <input type="radio" id="showpics-1" value="n" name="showpics" v-model="product.showpics">
+              No
+            </label> 
+          </div>
+      </div>
+        <div class="form-group">
           <div class="form-group files">
             <label>Upload Your File </label>
             <input type="file" class="form-control" multiple="" @change="onFileChange" v-model="files">
@@ -66,6 +79,10 @@
                     <figure class="imghvr-fade">
                       <img :src="image.scr" class="img-responsive">
                       <figcaption>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Title</label>
+                            <input type="text" class="form-control" :value="'![alt text](components/dock/soss-uploader/service/get/d_cms_artical/'+product.id+'-'+image.name+')'">
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Caption</label>
                             <textarea class="form-control" v-model="image.caption"></textarea>

@@ -59,7 +59,7 @@ WEBDOCK.component().register(function(exports){
                             if(r.success){
                                 if(r.result.d_cms_artical_v1.length!=0)
                                 bindData.product= r.result.d_cms_artical_v1[0];
-
+                                
                                 bindData.p_image =  r.result.d_cms_artical_imagev1;
                                 for (var i = 0; i < bindData.p_image.length; i++) {
                                     bindData.p_image[i].scr='components/dock/soss-uploader/service/get/d_cms_artical/'+bindData.product.id+'-'+bindData.p_image[i].name;
