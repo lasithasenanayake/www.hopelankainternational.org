@@ -1,0 +1,31 @@
+<header class="masthead">
+    <div class="hero-image">
+      <div class="mx-auto text-center">
+        <br/><br/><br/><br/>
+        <h1 class="mx-auto my-0 text-white text-uppercase">Hope Lanka International</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5"> Is a ministry providing biblical hope and practical help for everyday problems. </h2>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Get Involed</a>
+        <br/><br/><br/><br/>
+      </div>
+    </div>
+</header>
+
+<div class="row" style="margin-right: 10px;margin-left: 10px;">
+        <div class="col-sm-4 col-sm-offset-3 blogShort" v-for="item in Articals">
+                <a :href="'#/app/davvag-cms-generalapps/a?id='+item.id"><h3>{{ unescape(item.title) }}</h3></a>
+                <img v-if="item.imgname" :src="'components/dock/soss-uploader/service/get/d_cms_artical/'+item.id+'-'+item.imgname" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
+                
+                <em>{{ item.createdate | dateformate }}</em>
+                <article v-html="marked(unescape(item.summery))"></article>
+                <a class="pull-right marginBottom10" :href="'#/app/davvag-cms-generalapps/a?id='+item.id">READ MORE</a> 
+        </div>
+        
+</div>
+
+</br>
+
+
+
+
+
+

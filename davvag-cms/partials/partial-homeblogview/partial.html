@@ -25,7 +25,7 @@
                     <h4 class="blog-title"><a :href="'#/app/davvag-cms-generalapps/a?id='+item.id">{{ item.title }}</a></h4>
                     <p>{{ item.createdate | dateformate }}</p>
                     <div class="blog-summary">
-                    <p v-html="marked(item.summery)"></p>
+                    <p v-html="marked(unescape(item.summery))"></p>
                     <a :href="'#/app/davvag-cms-generalapps/a?id='+item.id" class="btn-card">Read</a>
                     
                     </div>
@@ -40,3 +40,10 @@
         </div>
 </section>
 <!-- details card section starts from here -->
+
+
+
+
+
+
+

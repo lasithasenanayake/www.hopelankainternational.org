@@ -145,8 +145,13 @@ WEBDOCK.component().register(function(exports){
             .then(function(result){
                 if (result.result.length !=0){
                     bindData.product = result.result[0];
+                    
                     bindData.product.content=bindData.product.content.split("~^").join("'");
                     bindData.product.content=bindData.product.content.split('~*').join('"');
+                    bindData.product.title=unescape(bindData.product.title);
+                    bindData.product.content=unescape(bindData.product.content);
+                    bindData.product.summery=unescape(bindData.product.summery);
+                    bindData.product.tags=unescape(bindData.product.tags);
                     bindData.p_image =[];// 'components/dock/soss-uploader/service/get/d_cms_artical/'+bindData.product.id;
                 }
             })
@@ -177,6 +182,7 @@ WEBDOCK.component().register(function(exports){
         validator.map ("product.content",true, "You should enter a content");
         validator.map ("product.tags",true, "You should enter a tags");
     }
+    
 
     function submit(){
         $('#send').prop('disabled', true);
@@ -187,7 +193,10 @@ WEBDOCK.component().register(function(exports){
             //bindData.product.content=bindData.product.content.replace('"',"~*");
             bindData.product.content=bindData.product.content.split("'").join("~^");
             bindData.product.content=bindData.product.content.split('"').join("~*");
-            //console.log(bindData.product.content);
+            bindData.product.title=escape(bindData.product.title);
+            bindData.product.content=escape(bindData.product.content);
+            bindData.product.summery=escape(bindData.product.summery);
+            bindData.product.tags=escape(bindData.product.tags);
             bindData.product.Images=[];
             for (var i = 0; i < bindData.p_image.length; i++) {
                 bindData.product.Images.push({id:bindData.p_image[i].id,name:bindData.p_image[i].name,

@@ -67,7 +67,7 @@
             "type":"partial",
             "location":"partials"
         },
-        "partial-homeblogview":{
+        "partial-homeblogdetail":{
             "type":"partial",
             "location":"partials"
         }
@@ -92,7 +92,7 @@
                 "partials" : {
                     "/" : "partial-home",
                     "/app/@appName/*appRoute" : "partial-app",
-                    "/home" : "partial-homeblogview",
+                    "/home" : "partial-homeblogdetail",
                     "/notFound": "partial-404",
                     "/account": "partial-account",
                     "/profile": "partial-profile",

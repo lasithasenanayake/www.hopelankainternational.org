@@ -14,7 +14,12 @@ WEBDOCK.component().register(function(exports){
         TopButtons:[{id:"home",caption:"Home",url:"#/profile",class:"nav-item",sub:[]},
                    {id:"about",caption:"About",url:"#/app/profileapp",class:"nav-item dropdown",sub:[{id:"home",caption:"Home",url:"#app",sub:[]},{id:"home",caption:"Home",url:"#app",sub:[]}]},
                    {id:"admin",caption:"Admininstration",url:"admin.php",class:"nav-item align-left",sub:[]}],
-        searchbar:false
+        searchbar:false,
+        facebook:"https://www.facebook.com/hopecenter.north",
+        youtube:undefined,
+        gpluse:undefined,
+        twitter:undefined,
+        instergram:undefined
     };
     var vueData = {
         data:bindData,
@@ -50,10 +55,12 @@ WEBDOCK.component().register(function(exports){
                         if(r.success){
                             //bindData.TopButtons=r.result.d_cms_buttons_v1;
                             //tmpmenu=r.result.d_cms_buttons_v1;
+                            r.result.d_cms_buttons_v1.sort((a,b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0)); 
                             r.result.d_cms_buttons_v1.forEach(element => {
                                 element.sub=getSubMenu(element.id);             
                                 bindData.TopButtons.push(element);
                             });
+                            
                         }
                     })
                     .error(function(error){

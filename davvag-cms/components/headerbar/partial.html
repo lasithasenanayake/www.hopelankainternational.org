@@ -15,8 +15,19 @@
           </div>
       </li>
     </ul>
+    <div style="position: absolute; right: 0px; top: 0px;">
+      <ul class="social-network social-circle">
+          
+          <li v-if="facebook"><a :href="facebook" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li v-if="twitter"><a :href="twitter" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+          <li v-if="gpluse"><a :href="gpluse" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+          <li v-if="instergram"><a :href="instergram" class="icoInstagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li v-if="youtube"><a :href="youtube" class="icoInstagram" title="Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+          
+      </ul>
+    </div>
     <form class="form-inline my-2 my-lg-0" v-if="searchbar">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <input class="form-control mr-sm-2" type="text" place holder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

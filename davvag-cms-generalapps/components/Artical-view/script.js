@@ -41,6 +41,7 @@ WEBDOCK.component().register(function(exports){
         },
         computed: {
           compiledMarkdown: function () {
+            
             return marked(bindData.product.content);
           }
         }
@@ -59,7 +60,14 @@ WEBDOCK.component().register(function(exports){
                             if(r.success){
                                 if(r.result.d_cms_artical_v1.length!=0)
                                 bindData.product= r.result.d_cms_artical_v1[0];
-                                
+                                document.title = unescape(bindData.product.title);
+
+                                bindData.product.content=bindData.product.content.split("~^").join("'");
+                                bindData.product.content=bindData.product.content.split('~*').join('"');
+                                bindData.product.title=unescape(bindData.product.title);
+                                bindData.product.content=unescape(bindData.product.content);
+                                bindData.product.summery=unescape(bindData.product.summery);
+                                bindData.product.tags=unescape(bindData.product.tags);
                                 bindData.p_image =  r.result.d_cms_artical_imagev1;
                                 for (var i = 0; i < bindData.p_image.length; i++) {
                                     bindData.p_image[i].scr='components/dock/soss-uploader/service/get/d_cms_artical/'+bindData.product.id+'-'+bindData.p_image[i].name;

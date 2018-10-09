@@ -3,8 +3,7 @@
     <div class="blog-post">
         
         <h2 class="blog-post-title">{{ product.title }}</h2>
-        <p class="blog-post-meta">{{ product.createdate }} </p>
-        <img v-if="product.imgname!=''" :src="'components/dock/soss-uploader/service/get/d_cms_artical/'+product.id+'-'+product.imgname" alt="post img" width="300" class="pull-left img-responsive postImg img-thumbnail margin10">
+        <img v-if="product.imgname" :src="'components/dock/soss-uploader/service/get/d_cms_artical/'+product.id+'-'+product.imgname" alt="post img" width="300" class="pull-left img-responsive postImg img-thumbnail margin10">
         <article v-html="compiledMarkdown">
          
         </article>
