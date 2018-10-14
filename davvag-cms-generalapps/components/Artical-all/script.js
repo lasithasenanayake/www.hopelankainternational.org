@@ -6,6 +6,7 @@ WEBDOCK.component().register(function(exports){
         
         handler.transformers.allArticals()
         .then(function(result){
+            //bindData.product.title=unescape(bindData.product.title);
             vueData.data.items = result.result;
         })
         .error(function(){
@@ -26,6 +27,11 @@ WEBDOCK.component().register(function(exports){
         onReady: function(s){
             scope = s;
             loadUoms(0,100);
+        },
+        filter:{
+            foramtdata:function(v){
+                return unescape(v);
+            }
         }
     } 
 

@@ -11,7 +11,7 @@ WEBDOCK.component().register(function(exports){
         ,
         onReady: function(s){
             //createlayout();
-            //createlayout();
+            /*
             var menuhandler  = exports.getComponent("soss-data");
             var query=[{storename:"d_cms_artical_v1",search:"boost:y"}];
             //var tmpmenu=[];
@@ -20,14 +20,13 @@ WEBDOCK.component().register(function(exports){
                         .then(function(r){
                             console.log(JSON.stringify(r));
                             if(r.success){
-                                r.result.d_cms_artical_v1.sort((a,b) => (moment(a.createdate, "MM-DD-YYYY hh:mm:ss").format('YYYYMMDDhhmm') > moment(b.createdate, "MM-DD-YYYY hh:mm:ss").format('YYYYMMDDhhmm')) ? -1 : ((moment(b.createdate, "MM-DD-YYYY hh:mm:ss").format('YYYYMMDDhhmm') > moment(a.createdate, "MM-DD-YYYY hh:mm:ss").format('YYYYMMDDhhmm')) ? 1 : 0)); 
                                 bindData.Articals= r.result.d_cms_artical_v1;
                             }
                         })
                         .error(function(error){
                             bindData.Articals=[];
                             console.log(error.responseJSON);
-            });
+            });*/
             
         },
         filters:{
@@ -47,7 +46,7 @@ WEBDOCK.component().register(function(exports){
     } 
 
 
-
+    
     exports.vue = vueData;
     exports.onReady = function(){
         

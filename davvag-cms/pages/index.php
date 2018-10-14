@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="assets/dock/images/favicon.ico" type="image/png">
-  <title>DAVAAG Application Dock</title>
+  <title>Hope Lanka International</title>
   <link href="assets/davvag-cms/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/davvag-cms/css/dockanimation.css" rel="stylesheet">
   <link href="assets/davvag-cms/css/custom.css" rel="stylesheet">
@@ -38,6 +38,8 @@
 
 
 <script type="text/javascript">
+    
+    
     WEBDOCK.onReady (function(){
         jQuery('#preloader').delay(350).fadeOut(function(){
             jQuery('body').delay(350).css({'overflow':'visible'});

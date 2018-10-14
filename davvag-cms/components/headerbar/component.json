@@ -5,12 +5,7 @@
     "version" : "0.1",
     "gitUrl" : "",
     "resources": {
-        "css":[
-            {
-                "type" : "css",
-                "location" : "social.css"
-            }
-        ],
+        
         "files":[
             {
                 "type" : "mainScript",

@@ -16,6 +16,10 @@
                 "tag": "markedmin",
                 "version" : "latest",
                 "location":"marked.min.js"
+            },{
+                "tag": "customxp",
+                "version" : "latest",
+                "location":"custom.js"
             }
         ],
         "files":[

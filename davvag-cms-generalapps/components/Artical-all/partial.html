@@ -10,13 +10,26 @@
   <table class="table">
     <thead>
       <tr>
+        <th>ID</th>
+        <th>Date</th>
         <th>Title</th>
+        <th>Featured</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in items">
-        <td>{{ item.title }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.createdate }}</td>
+        <td>{{ item.title | foramtdata}}</td>
+        <td>
+          <label class="radio-inline" for="feature-0">
+            Yes<input type="radio" id="feature-0" value="y" :name="'feature'+item.id" v-model="item.boost">
+          </label> 
+          <label class="radio-inline" for="feature-1">
+            No<input type="radio" id="feature-1" value="n" :name="'feature'+item.id" v-model="item.boost">
+          </label> 
+        </td>
         <td>
             <div class="btn-group pull-right" role="group" aria-label="..." style="margin: 10px;">
                 <a class="btn btn-primary" v-on:click="navigate(item.id)" ><span class="glyphicon glyphicon-pencil"></span> Edit</a>

@@ -70,12 +70,16 @@
         "partial-homeblogdetail":{
             "type":"partial",
             "location":"partials"
+        },
+        "partial-donation":{
+            "type":"partial",
+            "location":"partials"
         }
     },
     "description":{
-        "title": "DAAVG Dock",
+        "title": "Hope Lanka International",
         "author":"Daavg",
-        "version":"0.2",
+        "version":"0.4",
         "icon":""
     },
     "configuration":{
@@ -93,6 +97,7 @@
                     "/" : "partial-home",
                     "/app/@appName/*appRoute" : "partial-app",
                     "/home" : "partial-homeblogdetail",
+                    "/donate" : "partial-donation",
                     "/notFound": "partial-404",
                     "/account": "partial-account",
                     "/profile": "partial-profile",

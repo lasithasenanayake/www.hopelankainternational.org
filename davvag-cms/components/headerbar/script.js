@@ -16,7 +16,7 @@ WEBDOCK.component().register(function(exports){
                    {id:"admin",caption:"Admininstration",url:"admin.php",class:"nav-item align-left",sub:[]}],
         searchbar:false,
         facebook:"https://www.facebook.com/hopecenter.north",
-        youtube:undefined,
+        youtube:"https://www.youtube.com/channel/UCmr-voS45Jzn4yUE8wqCuzA",
         gpluse:undefined,
         twitter:undefined,
         instergram:undefined
