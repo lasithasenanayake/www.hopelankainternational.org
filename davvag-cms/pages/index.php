@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="assets/dock/images/favicon.ico" type="image/png">
+  <link rel="icon" href="assets/davvag-cms/images/favicon.png" type="image/png">
   <title>Hope Lanka International</title>
   <link href="assets/davvag-cms/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/davvag-cms/css/dockanimation.css" rel="stylesheet">
