@@ -24,15 +24,7 @@
             "type":"shell",
             "location":"shell"
         },
-        "domain-info": {
-            "type":"shell",
-            "location":"shell"
-        },
         "soss-data": {
-            "type":"shell",
-            "location":"shell"
-        },
-        "productsvr": {
             "type":"shell",
             "location":"shell"
         },
@@ -75,33 +67,25 @@
             "type":"partial",
             "location":"partials"
         },
-        "partial-homedavvag":{
+        "partial-homeblogdetail":{
             "type":"partial",
             "location":"partials"
         },
         "partial-donation":{
             "type":"partial",
             "location":"partials"
-        },
-        "partial-shoping-view":{
-            "type":"partial",
-            "location":"partials"
-        },
-        "partial-shoping-view_2":{
-            "type":"partial",
-            "location":"partials"
         }
     },
     "description":{
-        "title": "Davvag",
+        "title": "Hope Lanka International",
         "author":"Daavg",
-        "version":"0.9",
+        "version":"0.4",
         "icon":""
     },
     "configuration":{
         "webdock":{
             "startupComponent" : "product",
-            "onLoad": ["dependencies", "soss-routes","soss-routes-vue", "soss-uploader","soss-validator", "auth-handler","soss-data","domain-info","productsvr"],
+            "onLoad": ["dependencies", "soss-routes","soss-routes-vue", "soss-uploader","soss-validator", "auth-handler","soss-data"],
             "firewall" : {
                 "guest" : [],
                 "admin": []
@@ -112,8 +96,7 @@
                 "partials" : {
                     "/" : "partial-home",
                     "/app/@appName/*appRoute" : "partial-app",
-                    "/home" : "partial-shoping-view_2",
-                    "/home2" : "partial-shoping-view_2",
+                    "/home" : "partial-homeblogdetail",
                     "/donate" : "partial-donation",
                     "/notFound": "partial-404",
                     "/account": "partial-account",
