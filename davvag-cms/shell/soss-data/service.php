@@ -9,7 +9,7 @@ class SearchServices {
         $sall=$req->Body(true);
         $f=new stdClass();
         foreach($sall as $s){
-            $result= CacheData::getObjects(md5($s->search),$s->storename);
+            $result= CacheData::getObjects_fullcache(md5($s->search),$s->storename);
             if(!isset($result)){
                 $result = SOSSData::Query ($s->storename,urlencode($s->search));
                 if($result->success){

@@ -148,10 +148,10 @@ WEBDOCK.component().register(function(exports){
                     
                     bindData.product.content=bindData.product.content.split("~^").join("'");
                     bindData.product.content=bindData.product.content.split('~*').join('"');
-                    bindData.product.title=unescape(bindData.product.title);
+                    /*bindData.product.title=unescape(bindData.product.title);
                     bindData.product.content=unescape(bindData.product.content);
                     bindData.product.summery=unescape(bindData.product.summery);
-                    bindData.product.tags=unescape(bindData.product.tags);
+                    bindData.product.tags=unescape(bindData.product.tags);*/
                     bindData.p_image =[];// 'components/dock/soss-uploader/service/get/d_cms_artical/'+bindData.product.id;
                 }
             })
@@ -188,15 +188,8 @@ WEBDOCK.component().register(function(exports){
         $('#send').prop('disabled', true);
         bindData.submitErrors = validator.validate(); 
         if (!bindData.submitErrors){
-            //bindData.product.content=bindData.product.content.replace(new RegExp(find, "'"), "~^");//.replace("'","~^");
-            //bindData.product.content=bindData.product.content.replace(new RegExp(find, '"'), "~*");//.replace("'","~^");
-            //bindData.product.content=bindData.product.content.replace('"',"~*");
             bindData.product.content=bindData.product.content.split("'").join("~^");
             bindData.product.content=bindData.product.content.split('"').join("~*");
-            bindData.product.title=escape(bindData.product.title);
-            bindData.product.content=escape(bindData.product.content);
-            bindData.product.summery=escape(bindData.product.summery);
-            bindData.product.tags=escape(bindData.product.tags);
             bindData.product.Images=[];
             for (var i = 0; i < bindData.p_image.length; i++) {
                 bindData.product.Images.push({id:bindData.p_image[i].id,name:bindData.p_image[i].name,

@@ -5,8 +5,8 @@ WEBDOCK.component().register(function(exports){
     var routeData;
     
     var bindData = {
-        product:{},
-        uoms:[],
+        product:{BType:"Top",parentButtonid:0},
+        parentButtons:[],
         content:""
 
     };
@@ -28,6 +28,22 @@ WEBDOCK.component().register(function(exports){
             validatorInstance = exports.getShellComponent ("soss-validator");
             routeData = pInstance.getInputData();
             loadValidator();
+            var menuhandler  = exports.getShellComponent("soss-data");
+            var query=[{storename:"d_cms_buttons_v1",search:"parentButtonid:0"}];
+            //var tmpmenu=[];
+            bindData.TopButtons=[];
+            menuhandler.services.q(query)
+                        .then(function(r){
+                            console.log(JSON.stringify(r));
+                            if(r.success){
+                                //if(r.result.d_cms_artical_v1.length!=0)
+                                bindData.parentButtons=r.result.d_cms_buttons_v1;
+                            }
+                        })
+                        .error(function(error){
+                            //bindData.product={title:"Artical Not found or Internal query Erorr",content:"Please refresh or navigate back"};
+                            console.log(error.responseJSON);
+            });
             if (routeData)
                 loadCategory(scope);
             //$('#editor').wysiwyg();
