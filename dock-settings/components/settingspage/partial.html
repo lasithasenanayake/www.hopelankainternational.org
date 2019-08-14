@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs">
     <li class="active"><a href="#settings-users" data-toggle="tab"><strong>Users</strong></a></li>
     <li class=""><a href="#settings-apps" data-toggle="tab"><strong>Apps</strong></a></li>
-    <li class=""><a href="#settings-logo-title" data-toggle="tab"><strong>Logo & Title</strong></a></li>
+    <li class=""><a href="#settings-logo-title" data-toggle="tab"><strong>Webdock Customization</strong></a></li>
   </ul>
 
   <div class="tab-content mb30">
@@ -34,9 +34,66 @@
         <h4 class="dark">Apps</h4>
         <p>Still Under Construction</p>
     </div>
+
+    
     <div class="tab-pane" id="settings-logo-title">
-      <h4 class="dark">Logo & Title</h4>
-      <p>Still Under Construction</p>
+      <h4 class="dark">Webdock Customization</h4>
+
+      <form>
+        <div class="form-group">
+          <label>Site title</label>
+          <input type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label>Site title image</label>
+            <button v-on:click="selectImage()" class="form-control btn btn-primary">...</button>
+        </div>
+        <div class="form-group">
+            <label>Favicon</label>
+            <button v-on:click="selectImage()" class="form-control btn btn-primary">...</button>
+        </div>
+      </form>
+
     </div>
+
   </div>
+
+</div>
+
+<div class="modal fade" id="modalImagePopup" role="dialog"  style="overflow-x: auto;overflow-y: auto;width:100%;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="overflow-x: auto;overflow-y: auto;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Please select your image</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group files">
+                      <label>Upload Your File</label>
+                      <input type="file" class="form-control" multiple="" @change="onFileMultiChange" v-model="files">
+                    </div>
+                    <div>
+                        <div class="row" style="overflow-x: auto;overflow-y: scroll;height:300px;">
+                            <div class="col-md-3" v-for="(image,index) in p_image">
+                              <figure class="imghvr-fade">
+                                <img :src="image.scr" class="img-responsive" style="height:125px;">
+
+                                <figcaption>
+                                  <div class="btn-group">
+                                    <input type="checkbox" v-model="image.selected"/>
+                                  </div>
+                                </figcaption>
+                              </figure>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" >Cancel</button>
+              <button type="button" class="btn btn-default" >Select</button>
+            </div>
+        </div>
+    </div>
 </div>
