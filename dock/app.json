@@ -8,6 +8,14 @@
             "type":"shell",
             "location":"shell"
         },
+        "soss-data": {
+            "type":"shell",
+            "location":"shell"
+        },
+        "dynamic-attributes": {
+            "type":"shell",
+            "location":"shell"
+        },
         "soss-routes-vue": {
             "type":"shell",
             "location":"shell"
@@ -70,7 +78,7 @@
     "configuration":{
         "webdock":{
             "startupComponent" : "product",
-            "onLoad": ["dependencies", "soss-routes","soss-routes-vue", "soss-uploader","soss-validator", "auth-handler"],
+            "onLoad": ["dependencies", "soss-routes","dynamic-attributes","soss-routes-vue", "soss-uploader","soss-validator", "auth-handler","soss-data"],
             "firewall" : {
                 "guest" : [],
                 "admin": []

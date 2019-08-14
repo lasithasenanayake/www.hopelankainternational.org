@@ -69,8 +69,14 @@ WEBDOCK.component().register(function(exports){
             if (data[i].object.type === "mainView")
                 view = data[i].object.view;
 
-            renderDiv.html(view);
-            renderDiv.attr("style", "animation: fadein 0.2s");
+            
+            var viewJQuery = $(view);
+
+            if (!instance.deferredVue){
+                renderDiv.html(view);
+                renderDiv.attr("style", "animation: fadein 0.2s");
+            }
+            
             if (!instance)
                 return;
 
@@ -90,6 +96,27 @@ WEBDOCK.component().register(function(exports){
                 if (instance.vue.onReady){
                     instance.vue.onReady(scope,renderDiv);
                 }
+            }
+
+            if (instance.deferredVue){
+                canCallOnReady = false;
+
+                instance.deferredVue(function(vueData){
+                    renderDiv.html(viewJQuery);
+                    renderDiv.attr("style", "animation: fadein 0.2s");
+
+                    if (!$(renderDiv).attr('id'))
+                        $(renderDiv).attr('id', "sossroutes_" + (new Date()).getTime() );
+
+                    vueData.el = '#' + $(renderDiv).attr('id');
+                    new Vue(vueData);
+                    scope = vueData.data;
+
+                    if (vueData.onReady){
+                        vueData.onReady(scope,renderDiv);
+                    }                       
+                }, viewJQuery);
+
             }
 
             if (canCallOnReady && instance.onReady)

@@ -339,7 +339,7 @@
 
 <script src="lib/jquery.js"></script>
 <script src="lib/webdock.js" webdockapp="dock"></script>
-
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php echo MAPS_APIKEY; ?>"></script>
 <script type="text/javascript">
     WEBDOCK.onReady (function(){
         jQuery('#preloader').delay(350).fadeOut(function(){

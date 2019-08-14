@@ -4,6 +4,24 @@ WEBDOCK.component().register(function(exports){
     var pInstance = exports.getShellComponent("soss-routes");
     
 
+    function proceedWithComponentVue(vueData,routeSettings,renderDiv,routeParams,data,cb){
+        var app;
+
+        if (!vueData.deferRendering){
+            if (vueData.onBeforeRender)
+                vueData.onBeforeRender();
+            
+            vueData.el = '#' + routeSettings.routes.renderDiv;
+
+            app = new Vue(vueData);                    
+        }
+
+        if (vueData.onReady)
+            vueData.onReady(app, renderDiv,routeParams);
+
+        cb (data);
+    }
+
     var exports = {
         inject: function (data, instance, routeParams, cb){
             if (!data)
@@ -26,22 +44,16 @@ WEBDOCK.component().register(function(exports){
                 if (instance.onLoad)
                     instance.onLoad(instance);                
                 
-                vueData = instance.vue; 
-                var app;
-
-                if (!vueData.deferRendering){
-                    if (vueData.onBeforeRender)
-                        vueData.onBeforeRender();
-                    
-                    vueData.el = '#' + routeSettings.routes.renderDiv;
-
-                    app = new Vue(vueData);                    
+                if (instance.vue){
+                    vueData = instance.vue; 
+                    proceedWithComponentVue(vueData,routeSettings,renderDiv,routeParams,data,cb);
                 }
 
-                if (vueData.onReady)
-                    vueData.onReady(app, renderDiv,routeParams);
-
-                cb (data);
+                if (instance.deferredVue){
+                    instance.deferredVue(function(vueData){
+                        proceedWithComponentVue(vueData,routeSettings,renderDiv,routeParams,data,cb);
+                    }, renderDiv);
+                }
             } catch (e){
                 console.log ("Error Occured While Loading...");
                 console.log (e);
