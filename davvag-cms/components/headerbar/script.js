@@ -9,17 +9,12 @@ WEBDOCK.component().register(function(exports){
             title:""
         },
         appKey : "",
-        name:"Hope Lanka International",
+        name:"Davvag",
         icon:"",
         TopButtons:[{id:"home",caption:"Home",url:"#/profile",class:"nav-item",sub:[]},
                    {id:"about",caption:"About",url:"#/app/profileapp",class:"nav-item dropdown",sub:[{id:"home",caption:"Home",url:"#app",sub:[]},{id:"home",caption:"Home",url:"#app",sub:[]}]},
                    {id:"admin",caption:"Admininstration",url:"admin.php",class:"nav-item align-left",sub:[]}],
-        searchbar:false,
-        facebook:"https://www.facebook.com/hopecenter.north",
-        youtube:"https://www.youtube.com/channel/UCmr-voS45Jzn4yUE8wqCuzA",
-        gpluse:undefined,
-        twitter:undefined,
-        instergram:undefined
+        searchbar:true
     };
     var vueData = {
         data:bindData,
@@ -46,6 +41,15 @@ WEBDOCK.component().register(function(exports){
         vueData.el = '#' + $(element).attr('id');
         var handler  = exports.getComponent("auth-handler");
         var menuhandler  = exports.getComponent("soss-data");
+        var domaininfo  = exports.getComponent("domain-info");
+        domaininfo.services.DomainInfo().then(function(r){
+           if(r.success){
+            //console.log(JSON.stringify(r));
+            bindData.name=r.result.name;    
+           }
+        }).error(function(err){
+
+        });
         var query=[{storename:"d_cms_buttons_v1",search:"BType:Top"}];
         var tmpmenu=[];
         bindData.TopButtons=[];

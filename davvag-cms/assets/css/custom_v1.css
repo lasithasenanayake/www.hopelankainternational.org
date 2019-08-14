@@ -1,17 +1,53 @@
+div.product-wine-image {
+  margin-bottom: 30px;
+}
+
+.resp-sharing-button__link {
+  width:100%;
+}
+
+table#id-social-table{
+  width:100%;
+}
+
 #id-headerbar{
-    z-index:99999;
-    position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%;
 }
 
 .id-soss-routes{
-    margin-top:54px;
+    margin-top:90px;
+    min-height: 400px;
 }
 
+div.blog-post {
+  padding:15px;
+}
+
+img.image-blog-post{
+  margin-right:25px;
+  margin-bottom:15px;
+}
+
+h2.blog-post-title{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+
 .bg-primary {
-    background-color: #000 !important;
-    opacity: 0.7;
+    background-color:#8c0615 !important;
+    opacity: 1;
+}
+
+div#id-footer-bar {
+  background-color:#8c0615!important;
+  padding-top: 30px;
+  color: white;
+}
+
+a.id-copyright-link{
+  color:gainsboro;
 }
 
 .resp-sharing-button__link,
