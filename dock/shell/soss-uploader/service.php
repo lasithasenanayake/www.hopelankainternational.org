@@ -37,11 +37,14 @@ class UploaderService {
             $ns = $req->Params()->ns;
             $name = $req->Params()->name;
             $folder = MEDIA_FOLDER . "/".  $_SERVER["HTTP_HOST"] . "/$ns";
-			echo $folder;
+			//echo $folder;
             
             if (!file_exists($folder))
                 mkdir($folder, 0777, true);
-            
+            //echo $name;
+			//if (!file_exists("$folder/$name"))
+                //unlink("$folder/$name");
+			
             file_put_contents("$folder/$name", $this->getPostBody());
             $resObj = new stdClass();
             $resObj->sucess = true;
