@@ -37,6 +37,7 @@ class UploaderService {
             $ns = $req->Params()->ns;
             $name = $req->Params()->name;
             $folder = MEDIA_FOLDER . "/".  $_SERVER["HTTP_HOST"] . "/$ns";
+			echo $folder;
             
             if (!file_exists($folder))
                 mkdir($folder, 0777, true);
