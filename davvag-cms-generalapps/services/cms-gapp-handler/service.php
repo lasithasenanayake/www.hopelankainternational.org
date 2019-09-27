@@ -58,14 +58,17 @@ class ArticalService{
         //echo "imain";
         $data =null;
         if(isset($_GET["q"])){
-            $result= CacheData::getObjects_fullcache(md5("id:".$_GET["q"]),"d_cms_artical_summery_v1");
+            //echo "in here";
+            $result= CacheData::getObjects_fullcache(md5("id:".$_GET["q"]),"d_cms_artical_v1");
             if(!isset($result)){
-                $result = SOSSData::Query ("d_cms_artical_summery_v1",urlencode("id:".$_GET["q"]));
+                //echo "in here";
+                $result = SOSSData::Query("d_cms_artical_v1",urlencode("id:".$_GET["q"]));
+                return $result;
                 if($result->success){
                     //$f->{$s->storename}=$result->result;
                     if(isset($result->result[0])){
                         $data= $result->result[0];
-                        CacheData::setObjects(md5("id:".$_GET["q"]),"d_cms_artical_summery_v1",$result->result);
+                        CacheData::setObjects(md5("id:".$_GET["q"]),"d_cms_artical_v1",$result->result);
                     }
                 }
             }else{
